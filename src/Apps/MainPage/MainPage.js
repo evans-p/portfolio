@@ -7,12 +7,25 @@ import Heroe from "./Components/Heroe/Heroe";
 import Loader from "./Components/Loader/Loader";
 
 class MainPage extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      loaded: false,
+    };
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ loaded: true });
+    }, 2000);
+  }
+
   render() {
     return (
       <div className="MainPage">
         <Nav />
         <Heroe />
-        <Loader />
+        {!this.state.loaded ? <Loader /> : null}
       </div>
     );
   }

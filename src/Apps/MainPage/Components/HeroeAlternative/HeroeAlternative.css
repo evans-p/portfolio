@@ -1,0 +1,46 @@
+.HeroeAlternative {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--app-secondary-color);
+  display: flex;
+  flex-wrap: wrap;
+  overflow: scroll;
+}
+
+.HeroeAlternative .menu-option {
+  width: calc(50% - 45px);
+  height: calc(50% - 45px);
+  margin-left: 30px;
+  margin-top: 30px;
+  background-color: var(--menu-background-color);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.HeroeAlternative .menu-option:last-child {
+  width: calc(100% - 60px);
+}
+.HeroeAlternative .menu-option i {
+  font-size: 35px;
+  color: var(--app-color-main);
+  margin-bottom: 15px;
+}
+
+.HeroeAlternative .menu-option span {
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--menu-secondary-color);
+}
+
+.HeroeAlternative .menu-option:hover span {
+  color: var(--app-color-main);
+}
+
+@media only screen and (max-width: 580px) {
+  .HeroeAlternative .menu-option {
+    width: calc(100% - 60px);
+  }
+}

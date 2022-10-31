@@ -23,6 +23,7 @@
   --portrait-border-color: rgb(255, 255, 255, 0.1);
   --font-color-main: #eee;
   --app-color-main: #ffb400;
+  --app-secondary-color: #222;
 }
 
 ::-webkit-scrollbar {

@@ -1,0 +1,6 @@
+.MainPage {
+  background-image: url("./Components/Assets/background-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}

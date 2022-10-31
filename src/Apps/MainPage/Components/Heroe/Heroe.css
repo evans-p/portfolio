@@ -1,0 +1,114 @@
+.Heroe {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--body-background-color);
+}
+.Heroe .col {
+  width: 50%;
+}
+.Heroe .left {
+  display: flex;
+  justify-content: flex-end;
+}
+.Heroe .left .portrait {
+  width: 320px;
+  height: auto;
+  border-radius: 50%;
+  border: 10px solid var(--portrait-border-color);
+  margin-right: 10px;
+}
+
+.Heroe .right {
+  margin-left: 10px;
+}
+
+.Heroe .right h3 {
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  font-size: 19px;
+  line-height: 1.2;
+}
+
+/* .Heroe .right h1 {
+  font-size: 42px;
+  line-height: 42px;
+  text-transform: uppercase;
+  color: var(--app-color-main);
+  font-weight: 700;
+} */
+
+.Heroe .right h1 span {
+  color: var(--app-color-main);
+  font-weight: 700;
+}
+
+.Heroe .right p {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  margin-top: 11px;
+  margin-bottom: 23px;
+  letter-spacing: 0.16em;
+  width: 90%;
+  line-height: 32px;
+}
+
+.Heroe .right button {
+  box-shadow: none;
+  border-radius: 26px;
+  font-weight: 500;
+  height: 46px;
+  line-height: 46px;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 0 33px;
+  outline: none;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  letter-spacing: 0.5px;
+  border: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.Heroe .right .about {
+  color: var(--font-color-main);
+  background-color: var(--app-color-main);
+  border: 1px solid transparent;
+  margin-right: 25px;
+}
+
+.Heroe .right .about:hover {
+  color: var(--app-color-main);
+  background-color: transparent;
+  border: 1px solid var(--app-color-main);
+}
+.Heroe .right .about .bi {
+  transition: all 0.2s ease-in-out;
+}
+.Heroe .right .about:hover .bi {
+  color: var(--app-color-main);
+  transition: all 0.2s ease-in-out;
+}
+
+.Heroe .right .portfolio {
+  color: var(--app-color-main);
+  background-color: transparent;
+  border: 1px solid var(--app-color-main);
+}
+
+.Heroe .right .portfolio .bi {
+  color: var(--app-color-main);
+  transition: all 0.2s ease-in-out;
+}
+
+.Heroe .right .portfolio:hover {
+  color: var(--font-color-main);
+  background-color: var(--app-color-main);
+  border: 1px solid transparent;
+}
+.Heroe .right .portfolio:hover .bi {
+  color: var(--font-color-main);
+}

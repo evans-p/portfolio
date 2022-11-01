@@ -1,0 +1,60 @@
+.Info {
+  width: 100vw;
+  display: flex;
+}
+
+.Info .left {
+  width: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.Info .left img {
+  width: 440px;
+  height: auto;
+}
+.Info .left::before {
+  content: "";
+  border: 6px solid var(--app-color-main);
+  width: 440px;
+  height: 440px;
+  position: absolute;
+  z-index: -1;
+  transform: translate3d(26px, 26px, -26px);
+}
+
+.Info .right {
+  width: 50%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.Info .right ul {
+  list-style: none;
+  padding-left: 0;
+}
+.Info .right ul:last-child {
+  margin-left: 20px;
+}
+
+.Info .right ul li {
+  position: relative;
+}
+.Info .right ul li:not(:last-child) {
+  margin-bottom: 25px;
+}
+.Info .right ul li h6,
+.Info .right ul li h6 span {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--font-color-main);
+}
+.Info .right ul li h6 span {
+  font-weight: 400;
+  padding-right: 20px;
+  opacity: 0.7;
+}

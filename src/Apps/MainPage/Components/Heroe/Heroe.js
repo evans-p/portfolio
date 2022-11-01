@@ -3,7 +3,7 @@ import React from "react";
 import "./Heroe.css";
 import "./carousel.scss";
 
-import portrait from "../Assets/img_portfolio.jpg";
+import portrait from "../../Assets/img_portfolio.jpg";
 
 class Heroe extends React.Component {
   render() {

@@ -1,0 +1,45 @@
+.Head {
+  padding: 60px 0 54px;
+  width: 100vw;
+  /* background-color: rebeccapurple; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Head h2 {
+  font-size: 55px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.Head h2 span {
+  color: var(--app-color-main);
+}
+
+.Head h3 {
+  font-size: 15px;
+  text-transform: uppercase;
+  margin: 20px 0 0;
+  font-weight: 400;
+  position: relative;
+}
+
+.Head h3::before {
+  content: "";
+  width: 30px;
+  height: 2px;
+  background-color: var(--app-color-main);
+  position: absolute;
+  left: -50px;
+  top: 9px;
+}
+.Head h3::after {
+  content: "";
+  width: 30px;
+  height: 2px;
+  background-color: var(--app-color-main);
+  position: absolute;
+  right: -50px;
+  top: 9px;
+}

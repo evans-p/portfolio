@@ -3,6 +3,8 @@ import React from "react";
 import Head from "./Components/Head/Head";
 import Menu from "./Components/Menu/Menu";
 import Info from "./Components/Info/Info";
+import Education from "./Components/Education/Education";
+import Skills from "./Components/Skills/Skills";
 
 class About extends React.Component {
   render() {
@@ -11,6 +13,8 @@ class About extends React.Component {
         <Menu />
         <Head />
         <Info />
+        <Education />
+        <Skills />
       </div>
     );
   }

@@ -1,0 +1,27 @@
+.Skills {
+  margin-top: 50px;
+  border-top: 1px solid var(--portrait-border-color);
+}
+
+.Skills .row:first-child {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 23px;
+  font-weight: 600;
+  color: var(--font-color-main);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.Skills .col {
+  height: 100px;
+}
+
+.Skills .col:nth-child(1) {
+  background-color: red;
+}
+.Skills .col:nth-child(2) {
+  background-color: green;
+}
+.Skills .col:nth-child(3) {
+  background-color: black;
+}

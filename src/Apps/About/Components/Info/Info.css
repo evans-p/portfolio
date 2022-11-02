@@ -13,9 +13,11 @@
 .Info .left img {
   width: 440px;
   height: auto;
+  margin-left: 60px;
 }
 .Info .left::before {
   content: "";
+  margin-left: 60px;
   border: 6px solid var(--app-color-main);
   width: 440px;
   height: 440px;
@@ -27,33 +29,76 @@
 .Info .right {
   width: 50%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.Info button {
+  margin-top: 25px;
+  color: var(--font-color-main);
+  background-color: var(--app-color-main);
+  border: 1px solid transparent;
+  box-shadow: none;
+  border-radius: 23px;
+  font-weight: 500;
+  width: 280px;
+  height: 46px;
+  line-height: 46px;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 0 33px;
+  outline: none;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border 0.2s ease-in-out;
+}
+
+.Info button i {
+  color: var(--font-color-main);
+  margin-right: 12px;
+  transition: color 0.2s ease-in-out;
+}
+
+.Info button:hover {
+  color: var(--app-color-main);
+  background-color: transparent;
+  border: 1px solid var(--app-color-main);
+}
+.Info button:hover i {
+  color: var(--app-color-main);
+}
+
+.Info .right .information {
+  width: 100%;
+  display: flex;
   align-items: flex-start;
   justify-content: flex-start;
 }
 
-.Info .right ul {
+.Info .right .information ul {
   list-style: none;
   padding-left: 0;
 }
-.Info .right ul:last-child {
-  margin-left: 20px;
+.Info .right .information ul:last-child {
+  margin-left: 25px;
 }
 
-.Info .right ul li {
+.Info .right .information ul li {
   position: relative;
 }
-.Info .right ul li:not(:last-child) {
+.Info .right .information ul li:not(:last-child) {
   margin-bottom: 25px;
 }
-.Info .right ul li h6,
-.Info .right ul li h6 span {
+.Info .right .information ul li h6,
+.Info .right .information ul li h6 span {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-weight: 500;
-  text-transform: capitalize;
+  letter-spacing: 0.8px;
   color: var(--font-color-main);
 }
-.Info .right ul li h6 span {
+.Info .right .information ul li h6 span {
   font-weight: 400;
   padding-right: 20px;
   opacity: 0.7;

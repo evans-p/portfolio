@@ -46,7 +46,7 @@ class Menu extends React.Component {
                 : "option contact"
             }
           >
-            <i class="bi bi-chat-fill"></i>
+            <i className="bi bi-chat-fill"></i>
             <h3>contact</h3>
           </div>
         </div>

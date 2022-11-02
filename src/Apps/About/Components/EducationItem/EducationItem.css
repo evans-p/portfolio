@@ -1,0 +1,57 @@
+.EducationItem {
+  position: relative;
+  width: 100%;
+  height: 172px;
+  border-left: 1px solid var(--app-color-main);
+}
+
+.EducationItem .bullet {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid var(--app-color-main);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-50%);
+  background-color: var(--app-secondary-color);
+}
+
+.EducationItem .card {
+  background-color: transparent;
+  margin-left: 40px;
+}
+.EducationItem .card .date {
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.8;
+  position: absolute;
+  top: -4px;
+}
+.EducationItem .card .date i {
+  margin-right: 10px;
+}
+
+.EducationItem .card .title {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.EducationItem .card .subtitle {
+  letter-spacing: 0.5px;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.EducationItem .card .description {
+  letter-spacing: 1px;
+  font-size: 14px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}

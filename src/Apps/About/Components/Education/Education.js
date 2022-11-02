@@ -10,7 +10,7 @@ class Education extends React.Component {
       <div className="Education">
         <div className="container">
           <div className="row">
-            <div className="col">
+            <div className="col-12 col-md-6">
               <h2>Education</h2>
               <EducationItem
                 count={1}
@@ -27,7 +27,7 @@ class Education extends React.Component {
                 description={"Degree Grade 7.27/10"}
               />
             </div>
-            <div className="col">
+            <div className="col-12 col-md-6">
               <h2>Seminars - Classes</h2>
               <EducationItem
                 count={1}

@@ -12,9 +12,9 @@ class About extends React.Component {
       <div className="About">
         <Menu />
         <Head />
-        <Info />
+        <Info width={this.props.width} />
         <Education />
-        <Skills />
+        <Skills width={this.props.width} />
       </div>
     );
   }

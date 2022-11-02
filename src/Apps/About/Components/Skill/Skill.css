@@ -1,45 +1,30 @@
-.Skills {
-  margin-top: 50px;
-  width: 100%;
-  border-top: 1px solid var(--portrait-border-color);
-}
-
-.Skills .row:first-child {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  font-size: 23px;
-  font-weight: 600;
-  color: var(--font-color-main);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-.Skills .skill {
+.Skill {
   width: 100%;
   height: 88px;
   /* background-color: rebeccapurple; */
 }
-.Skills .skill .text {
-  width: 90%;
+.Skill .text {
+  width: 100%;
   height: 50%;
   color: var(--font-color-main);
   font-weight: 300;
   text-transform: uppercase;
   font-size: 16px;
 }
-.Skills .chart-bar {
+.Skill .chart-bar {
   border-top: 1px solid var(--portrait-border-color);
-  width: 90%;
+  width: 100%;
   height: 50%;
   position: relative;
 }
 
-.Skills .chart-bar .bar {
+.Skill .chart-bar .bar {
   height: 1px;
   background-color: var(--app-color-main);
   position: absolute;
 }
 
-.Skills .chart-bar .percent {
+.Skill .chart-bar .percent {
   width: 46px;
   height: 32px;
   border-radius: 4px;
@@ -52,7 +37,7 @@
   top: -37.66px;
 }
 
-.Skills .chart-bar .percent::after {
+.Skill .chart-bar .percent::after {
   content: "";
   width: 8px;
   height: 8px;

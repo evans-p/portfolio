@@ -24,6 +24,7 @@
   margin: 20px 0 0;
   font-weight: 400;
   position: relative;
+  text-align: center;
 }
 
 .Head h3::before {
@@ -43,4 +44,11 @@
   position: absolute;
   right: -50px;
   top: 9px;
+}
+
+@media only screen and (max-width: 545px) {
+  .Head h3::after,
+  .Head h3::before {
+    display: none;
+  }
 }

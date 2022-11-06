@@ -1,0 +1,26 @@
+.Item {
+  margin: 0 15px;
+}
+
+.Item .title {
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.Item .information {
+  text-transform: lowercase;
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  margin-bottom: 35px;
+}
+
+.Item .information i {
+  color: var(--app-color-main);
+  font-size: 14px;
+  margin-right: 10px;
+}

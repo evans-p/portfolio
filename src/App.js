@@ -2,6 +2,7 @@ import React from "react";
 
 import MainPage from "./Apps/MainPage/MainPage";
 import About from "./Apps/About/About";
+import Contract from "./Apps/Contact/Contact";
 
 class App extends React.Component {
   constructor(props) {
@@ -26,7 +27,8 @@ class App extends React.Component {
     return (
       <div>
         {/* <MainPage /> */}
-        <About width={this.state.width} />
+        {/* <About width={this.state.width} /> */}
+        <Contract width={this.state.width} />
       </div>
     );
   }

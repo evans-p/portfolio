@@ -40,6 +40,12 @@ textarea {
   resize: none;
 }
 
+h1 {
+  font-size: 55px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 h3 {
   font-size: 19px;
   font-weight: 400;

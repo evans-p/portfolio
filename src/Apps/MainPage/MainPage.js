@@ -5,7 +5,7 @@ import "./MainPage.css";
 import Heroe from "./Components/Heroe/Heroe";
 import Loader from "./Components/Loader/Loader";
 import HeroeAlternative from "./Components/HeroeAlternative/HeroeAlternative";
-import Menu from "./Components/Menu/Menu";
+import Menu from "../UtilComponents/Menu/Menu";
 
 class MainPage extends React.Component {
   constructor(props) {

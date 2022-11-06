@@ -1,33 +1,20 @@
-.Head {
-  padding: 60px 0 55px;
+.Header {
+  padding: 60px 0 60px;
   width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.Head h2 {
-  font-size: 55px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  line-height: 1.2;
-}
-.Head h2 span {
+.Header h1 span {
   color: var(--app-color-main);
-  margin-left: 15px;
+  margin-left: 12px;
 }
 
-.Head h3 {
+.Header h3 {
   font-size: 15px;
-  text-transform: uppercase;
   margin: 20px 0 0;
-  font-weight: 400;
   position: relative;
-  text-align: center;
 }
 
-.Head h3::before {
+.Header h3::before {
   content: "";
   width: 30px;
   height: 2px;
@@ -36,7 +23,7 @@
   left: -50px;
   top: 9px;
 }
-.Head h3::after {
+.Header h3::after {
   content: "";
   width: 30px;
   height: 2px;
@@ -47,8 +34,8 @@
 }
 
 @media only screen and (max-width: 545px) {
-  .Head h3::after,
-  .Head h3::before {
+  .Header h3::after,
+  .Header h3::before {
     display: none;
   }
 }

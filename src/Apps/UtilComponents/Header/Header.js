@@ -1,19 +1,19 @@
 import React from "react";
 
-import "./Head.css";
+import "./Header.css";
 
-class Head extends React.Component {
+class Header extends React.Component {
   render() {
     return (
-      <header className="Head">
-        <h2>
+      <header className="Header d-flex flex-column align-items-center">
+        <h1>
           {this.props.titleMain}
           <span>{this.props.titleSecondary}</span>
-        </h2>
+        </h1>
         <h3>{this.props.subtitle}</h3>
       </header>
     );
   }
 }
 
-export default Head;
+export default Header;

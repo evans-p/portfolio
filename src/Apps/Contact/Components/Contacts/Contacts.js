@@ -21,7 +21,14 @@ class Contacts extends React.Component {
       <div className="row">
         <div className="col d-flex flex-column ">
           {data.map((el) => {
-            return <Item title={el[0]} icon={el[1]} information={el[2]} />;
+            return (
+              <Item
+                title={el[0]}
+                icon={el[1]}
+                information={el[2]}
+                key={9999999 * Math.random()}
+              />
+            );
           })}
         </div>
       </div>
@@ -34,7 +41,13 @@ class Contacts extends React.Component {
           <div className="col-12 col-md-4 d-flex flex-column">
             {this.renderContactItems()}
           </div>
-          <div className="form col-12 col-md-8 d-flex flex-column align-items-start">
+          <div
+            className={
+              this.props.width >= 768
+                ? "form col-12 col-md-8 d-flex flex-column align-items-start"
+                : "form col-12 col-md-8 d-flex flex-column align-items-start mt-1"
+            }
+          >
             <p>
               If you have any suggestion, project or even you want to say
               Hello.. please fill out the form below and I will reply you
@@ -52,7 +65,7 @@ class Contacts extends React.Component {
             />
             <Textarea />
             <MainButton
-              icon={<i class="bi bi-send-fill"></i>}
+              icon={<i className="bi bi-send-fill"></i>}
               text={"send message"}
             />
           </div>

@@ -27,8 +27,8 @@ class App extends React.Component {
     return (
       <div>
         {/* <MainPage width={this.state.width} /> */}
-        <About width={this.state.width} />
-        {/* <Contract width={this.state.width} /> */}
+        {/* <About width={this.state.width} /> */}
+        <Contract width={this.state.width} />
       </div>
     );
   }

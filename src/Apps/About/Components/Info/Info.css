@@ -14,20 +14,11 @@
   transform: translate3d(26px, 26px, -26px);
 }
 
-.Info .right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
 .Info .right ul {
   list-style: none;
   padding-left: 0;
 }
 
-.Info .right ul li {
-  position: relative;
-}
 .Info .right ul li:not(:last-child) {
   margin-bottom: 25px;
 }
@@ -43,41 +34,6 @@
   font-weight: 400;
   padding-right: 20px;
   opacity: 0.7;
-}
-
-.Info button {
-  margin-top: 25px;
-  color: var(--font-color-main);
-  background-color: var(--app-color-main);
-  border: 1px solid transparent;
-  box-shadow: none;
-  border-radius: 23px;
-  font-weight: 500;
-  width: 280px;
-  height: 46px;
-  line-height: 46px;
-  font-size: 15px;
-  text-transform: uppercase;
-  padding: 0 33px;
-  outline: none;
-  letter-spacing: 0.5px;
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
-    border 0.2s ease-in-out;
-}
-
-.Info button i {
-  color: var(--font-color-main);
-  margin-right: 12px;
-  transition: color 0.2s ease-in-out;
-}
-
-.Info button:hover {
-  color: var(--app-color-main);
-  background-color: transparent;
-  border: 1px solid var(--app-color-main);
-}
-.Info button:hover i {
-  color: var(--app-color-main);
 }
 
 @media only screen and (max-width: 991px) {

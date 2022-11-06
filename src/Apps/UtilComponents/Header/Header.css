@@ -32,10 +32,3 @@
   right: -50px;
   top: 9px;
 }
-
-@media only screen and (max-width: 545px) {
-  .Header h3::after,
-  .Header h3::before {
-    display: none;
-  }
-}

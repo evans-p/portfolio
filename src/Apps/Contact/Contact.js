@@ -1,8 +1,6 @@
 import React from "react";
 
-import "./Contact.css";
-
-import Head from "./Components/Head/Head";
+import Header from "../UtilComponents/Header/Header";
 import Contacts from "./Components/Contacts/Contacts";
 
 class Contact extends React.Component {
@@ -16,7 +14,7 @@ class Contact extends React.Component {
 
     return (
       <div className="Contact">
-        <Head {...headParameters} />
+        <Header {...headParameters} />
         <Contacts width={this.props.width} />
       </div>
     );

@@ -7,7 +7,7 @@ class FormElement extends React.Component {
     return (
       <div className="FormElement">
         {this.props.icon}
-        <input type="text" placeholder={this.props.placeholder} />
+        <input type={this.props.type} placeholder={this.props.placeholder} />
       </div>
     );
   }

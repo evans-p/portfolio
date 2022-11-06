@@ -1,0 +1,57 @@
+.MainButton {
+  height: 46px;
+  padding: 0 33px;
+  box-shadow: none;
+  border-radius: 23px;
+  border: 1px solid transparent;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--font-color-main);
+  background-color: var(--app-color-main);
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.6s;
+}
+
+.MainButton::before {
+  content: "";
+  width: 0%;
+  height: 102%;
+  position: absolute;
+  top: 0;
+  left: -25%;
+  background-color: var(--app-secondary-color);
+  transform: skew(-22deg);
+  transition-duration: 0.6s;
+  z-index: 1;
+}
+
+.MainButton span {
+  position: relative;
+  z-index: 2;
+  transition-duration: 0.6s;
+  color: var(--font-color-main);
+}
+.MainButton span i {
+  color: var(--font-color-main);
+  transition-duration: 0.6s;
+  padding-right: 14px;
+}
+
+.MainButton:hover {
+  border: 1px solid var(--app-color-main);
+}
+
+.MainButton:hover span i {
+  color: var(--app-color-main);
+}
+
+.MainButton:hover span {
+  color: var(--app-color-main);
+}
+
+.MainButton:hover::before {
+  width: 150%;
+}

@@ -1,0 +1,53 @@
+.SecondaryButton {
+  height: 46px;
+  padding: 0 33px;
+  box-shadow: none;
+  border-radius: 23px;
+  border: 1px solid var(--app-color-main);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--font-color-main);
+  background-color: var(--app-secondary-color);
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.6s;
+}
+
+.SecondaryButton::before {
+  content: "";
+  width: 0%;
+  height: 102%;
+  position: absolute;
+  top: 0;
+  left: -25%;
+  background-color: var(--app-color-main);
+  transform: skew(-22deg);
+  transition-duration: 0.6s;
+  z-index: 1;
+}
+
+.SecondaryButton span {
+  position: relative;
+  z-index: 2;
+  transition-duration: 0.6s;
+  color: var(--app-color-main);
+}
+.SecondaryButton span i {
+  color: var(--app-color-main);
+  transition-duration: 0.6s;
+  padding-right: 14px;
+}
+
+.SecondaryButton:hover span i {
+  color: var(--font-color-main);
+}
+
+.SecondaryButton:hover span {
+  color: var(--font-color-main);
+}
+
+.SecondaryButton:hover::before {
+  width: 150%;
+}

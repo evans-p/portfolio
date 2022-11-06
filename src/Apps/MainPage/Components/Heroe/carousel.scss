@@ -20,8 +20,8 @@ $fontSize: 42px;
 
   .change_outer {
     position: absolute;
-    left: 13%;
-    top: -18%;
+    left: 10%;
+    top: -17%;
     text-align: left;
     height: $fontSize * 1.5;
     overflow: hidden;
@@ -29,13 +29,13 @@ $fontSize: 42px;
     .change_inner {
       position: relative;
       animation: rotate 8s ease-in-out infinite;
-      font-weight: 800;
+      font-weight: 700;
     }
 
     .element {
       height: $fontSize * 1.5;
       display: block;
-      font-weight: 800;
+      font-weight: 700;
       text-transform: uppercase;
       color: var(--app-color-main);
     }

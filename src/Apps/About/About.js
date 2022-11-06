@@ -1,6 +1,6 @@
 import React from "react";
 
-import Head from "./Components/Head/Head";
+import Head from "../UtilComponents/Head/Head";
 import Menu from "./Components/Menu/Menu";
 import Info from "./Components/Info/Info";
 import Education from "./Components/Education/Education";

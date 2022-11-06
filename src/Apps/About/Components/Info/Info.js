@@ -2,6 +2,8 @@ import React from "react";
 
 import "./Info.css";
 
+import MainButton from "../../../UtilComponents/MainButton/MainButton";
+
 import portrait from "../../Assets/img_portfolio.jpg";
 
 class Info extends React.Component {
@@ -138,9 +140,18 @@ class Info extends React.Component {
                 </h6>
               </li>
             </ul>
-            <button className="col-12">
-              <i class="bi bi-download"></i>download my cv
-            </button>
+            <div
+              className={
+                this.props.width >= 992
+                  ? "row d-flex align-items-center ml-0"
+                  : "row d-flex justify-content-center align-items-center"
+              }
+            >
+              <MainButton
+                icon={<i class="bi bi-download"></i>}
+                text={"download my cv"}
+              />
+            </div>
           </div>
         </div>
       </div>

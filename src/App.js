@@ -26,9 +26,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {/* <MainPage /> */}
-        {/* <About width={this.state.width} /> */}
-        <Contract width={this.state.width} />
+        {/* <MainPage width={this.state.width} /> */}
+        <About width={this.state.width} />
+        {/* <Contract width={this.state.width} /> */}
       </div>
     );
   }

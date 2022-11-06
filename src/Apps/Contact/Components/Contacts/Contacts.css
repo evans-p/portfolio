@@ -2,4 +2,9 @@
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   letter-spacing: 0.2px;
+  color: var(--font-color-main);
+}
+
+.Contacts .form {
+  margin-bottom: 100px;
 }

@@ -4,6 +4,9 @@ import "./Contacts.css";
 
 import Item from "../Item/Item";
 import FormElement from "../FormElement/FormElement";
+import Textarea from "../TextArea/TextArea";
+
+import MainButton from "../../../UtilComponents/MainButton/MainButton";
 
 class Contacts extends React.Component {
   renderContactItems() {
@@ -28,24 +31,30 @@ class Contacts extends React.Component {
     return (
       <div className="Contacts container">
         <div className="row">
-          <div className="col-4 d-flex flex-column">
+          <div className="col-12 col-md-4 d-flex flex-column">
             {this.renderContactItems()}
           </div>
-          <div className="form col-8 d-flex flex-column align-items-center">
+          <div className="form col-12 col-md-8 d-flex flex-column align-items-start">
             <p>
               If you have any suggestion, project or even you want to say
               Hello.. please fill out the form below and I will reply you
               shortly.
             </p>
             <FormElement
+              type="text"
               placeholder="YOUR NAME"
               icon={<i className="bi bi-person-fill"></i>}
             />
             <FormElement
+              type="email"
               placeholder="YOUR EMAIL"
               icon={<i className="bi bi-envelope-open-fill"></i>}
             />
-            <textarea></textarea>
+            <Textarea />
+            <MainButton
+              icon={<i class="bi bi-send-fill"></i>}
+              text={"send message"}
+            />
           </div>
         </div>
       </div>

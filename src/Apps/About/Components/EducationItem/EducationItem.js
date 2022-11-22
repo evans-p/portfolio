@@ -7,7 +7,7 @@ class EducationItem extends React.Component {
     return (
       <div
         className="EducationItem"
-        style={this.props.count == 1 ? { marginTop: "50px" } : {}}
+        style={this.props.count === 1 ? { marginTop: "50px" } : {}}
       >
         <span className="bullet"></span>
         <div className="card">

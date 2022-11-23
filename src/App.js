@@ -1,37 +1,42 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 
-import MainPage from "./Apps/MainPage/MainPage";
-import About from "./Apps/About/About";
-import Contract from "./Apps/Contact/Contact";
+import Menu from "./Components/Menu/Menu";
+import MenuAlternative from "./Components/MenuAlternative/MenuAlternative";
+import Home from "./Components/Home/Home";
+import About from "./Components/About/About";
+import Contact from "./Components/Contact/Contact";
+import Portfolio from "./Components/Portfolio/Portfolio";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
+export default function App(props) {
+  const [width, setWdith] = useState(window.innerWidth);
+  const [loaded, setLoaded] = useState(false);
 
-    this.state = {
-      width: window.innerWidth,
-    };
+  const location = useLocation();
 
-    this.handleWindowResize = this.handleWindowResize.bind(this);
-  }
-  handleWindowResize() {
-    this.setState({
-      width: window.innerWidth,
-    });
-  }
+  const handleWindowResize = () => {
+    setWdith(window.innerWidth);
+  };
 
-  componentDidMount() {
-    window.addEventListener("resize", this.handleWindowResize);
-  }
-  render() {
-    return (
-      <div>
-        {/* <MainPage width={this.state.width} /> */}
-        {/* <About width={this.state.width} /> */}
-        <Contract width={this.state.width} />
-      </div>
-    );
-  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize);
+
+    setTimeout(() => {
+      setLoaded(true);
+    }, 2000);
+  }, []);
+
+  return (
+    <>
+      {width >= 950 ? <Menu /> : null}
+      {width < 950 && location.pathname !== "/" ? <MenuAlternative /> : null}
+
+      <Routes>
+        <Route path="/" element={<Home width={width} loaded={loaded} />} />
+        <Route path="/about" element={<About width={width} />} />
+        <Route path="/contact" element={<Contact width={width} />} />
+        <Route path="/portfolio" element={<Portfolio width={width} />} />
+      </Routes>
+    </>
+  );
 }
-
-export default App;

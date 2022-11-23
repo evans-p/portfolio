@@ -1,0 +1,25 @@
+.Heroe {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--body-background-color);
+}
+
+.Heroe .col:first-child img {
+  width: 320px;
+  height: auto;
+  border-radius: 50%;
+  border: 10px solid var(--portrait-border-color);
+  margin-right: 20px;
+}
+
+.Heroe h3 {
+  text-align: start;
+}
+
+.Heroe .col:last-child p {
+  margin-top: 11px;
+  margin-bottom: 23px;
+  letter-spacing: 0.16em;
+  width: 95%;
+  line-height: 32px;
+}

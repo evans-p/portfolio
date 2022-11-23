@@ -1,0 +1,18 @@
+.MenuAlternative {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  background-color: var(--app-color-main);
+  border-radius: 0 0 100% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.MenuAlternative i {
+  color: var(--font-color-main);
+  font-size: 35px;
+  transform: translate(-10%, -5%);
+}

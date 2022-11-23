@@ -1,0 +1,26 @@
+.ContactItem {
+  margin: 0 15px;
+}
+
+.ContactItem .title {
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.ContactItem .information {
+  text-transform: lowercase;
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  margin-bottom: 35px;
+}
+
+.ContactItem .information i {
+  color: var(--app-color-main);
+  font-size: 14px;
+  margin-right: 10px;
+}

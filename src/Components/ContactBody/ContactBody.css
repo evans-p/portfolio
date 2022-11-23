@@ -1,0 +1,10 @@
+.ContactBody .form p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  color: var(--font-color-main);
+}
+
+.ContactBody .form {
+  margin-bottom: 100px;
+}

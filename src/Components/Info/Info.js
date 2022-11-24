@@ -7,6 +7,60 @@ import MainButton from "../MainButton/MainButton";
 import portrait from "../../Assets/img_portfolio.jpg";
 
 class Info extends React.Component {
+  renderInfoLeft() {
+    return (
+      <ul
+        className={
+          this.props.width >= 992
+            ? "col-6"
+            : "col-6 d-flex flex-column align-items-end"
+        }
+      >
+        {this.props.infoDataLeft.map((el) => {
+          return (
+            <li key={Math.floor(999999999 * Math.random())}>
+              <h6
+                className={
+                  this.props.width >= 992
+                    ? ""
+                    : "d-flex flex-column align-items-end"
+                }
+              >
+                <span>{el[0]}</span>
+                {el[1]}
+              </h6>
+            </li>
+          );
+        })}
+      </ul>
+    );
+  }
+
+  renderInfoRight() {
+    return (
+      <ul
+        className={
+          this.props.width >= 992
+            ? "col-6"
+            : "col-6 d-flex flex-column align-items-start"
+        }
+      >
+        {this.props.infoDataRight.map((el) => {
+          return (
+            <li key={Math.floor(999999999 * Math.random())}>
+              <h6
+                className={this.props.width >= 992 ? "" : "d-flex flex-column"}
+              >
+                <span>{el[0]}</span>
+                {el[1]}
+              </h6>
+            </li>
+          );
+        })}
+      </ul>
+    );
+  }
+
   render() {
     return (
       <div className="Info container">
@@ -34,117 +88,12 @@ class Info extends React.Component {
                   : "row d-flex justify-content-center"
               }
             >
-              <ul
-                className={
-                  this.props.width >= 992
-                    ? "col-6"
-                    : "col-6 d-flex flex-column align-items-end"
-                }
-              >
-                <li>
-                  <h6
-                    className={
-                      this.props.width >= 992
-                        ? ""
-                        : "d-flex flex-column align-items-end"
-                    }
-                  >
-                    <span>First Name</span>Evans
-                  </h6>
-                </li>
-                <li>
-                  <h6
-                    className={
-                      this.props.width >= 992
-                        ? ""
-                        : "d-flex flex-column align-items-end"
-                    }
-                  >
-                    <span>Last Name</span>Poulakis
-                  </h6>
-                </li>
-                <li>
-                  <h6
-                    className={
-                      this.props.width >= 992
-                        ? ""
-                        : "d-flex flex-column align-items-end"
-                    }
-                  >
-                    <span>Birthdate</span>27 February 92
-                  </h6>
-                </li>
-                <li>
-                  <h6
-                    className={
-                      this.props.width >= 992
-                        ? ""
-                        : "d-flex flex-column align-items-end"
-                    }
-                  >
-                    <span>Nationality</span>Greek
-                  </h6>
-                </li>
-                <li>
-                  <h6
-                    className={
-                      this.props.width >= 992
-                        ? ""
-                        : "d-flex flex-column align-items-end"
-                    }
-                  >
-                    <span>Languages</span>English French
-                  </h6>
-                </li>
-              </ul>
-              <ul
-                className={
-                  this.props.width >= 992
-                    ? "col-6"
-                    : "col-6 d-flex flex-column align-items-start"
-                }
-              >
-                <li>
-                  <h6
-                    className={
-                      this.props.width >= 992 ? "" : "d-flex flex-column"
-                    }
-                  >
-                    <span>Experience</span>None
-                  </h6>
-                </li>
-                <li>
-                  <h6
-                    className={
-                      this.props.width >= 992 ? "" : "d-flex flex-column"
-                    }
-                  >
-                    <span>Address</span>Athens Greece
-                  </h6>
-                </li>
-                <li>
-                  <h6
-                    className={
-                      this.props.width >= 992 ? "" : "d-flex flex-column"
-                    }
-                  >
-                    <span>Phone</span>+30 6978 418 570
-                  </h6>
-                </li>
-                <li>
-                  <h6
-                    className={
-                      this.props.width >= 992 ? "" : "d-flex flex-column"
-                    }
-                  >
-                    <span>Email</span>evanspoulaki@gmail.com
-                  </h6>
-                </li>
-              </ul>
+              {this.renderInfoLeft()}
+              {this.renderInfoRight()}
               <div
                 className={
                   this.props.width >= 992
-                    ? "col"
+                    ? "col-12 px-0"
                     : "col d-flex justify-content-center align-items-center"
                 }
               >

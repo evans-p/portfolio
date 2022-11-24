@@ -7,18 +7,19 @@ import Skills from "../Skills/Skills";
 
 class About extends React.Component {
   render() {
-    let headParameters = {
-      titleMain: "About",
-      titleSecondary: "Me",
-      subtitle: "I DESIGN AND CODE BEAUTIFUL THINGS, AND I LOVE WHAT I DO.",
-    };
-
     return (
       <div className="About">
-        <Header {...headParameters} />
-        <Info width={this.props.width} />
-        <Education />
-        <Skills width={this.props.width} />
+        <Header {...this.props.aboutHeader} />
+        <Info
+          width={this.props.width}
+          infoDataLeft={this.props.infoDataLeft}
+          infoDataRight={this.props.infoDataRight}
+        />
+        <Education
+          seminarsData={this.props.seminarsData}
+          educationData={this.props.educationData}
+        />
+        <Skills width={this.props.width} skillData={this.props.skillData} />
       </div>
     );
   }

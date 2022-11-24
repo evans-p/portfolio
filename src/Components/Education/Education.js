@@ -12,37 +12,25 @@ class Education extends React.Component {
           <div className="row">
             <div className="col-12 col-md-6">
               <h2>Education</h2>
-              <EducationItem
-                count={1}
-                date="2010 - 2022"
-                title={"Aristotle University of Thessaloniki"}
-                subtitle={"Electrical and Computer Engineering Degree"}
-                description={"Degree Grade 7.27 out of 10"}
-              />
-              <EducationItem
-                count={2}
-                date="2010 - 2021"
-                title={"Aristotle University of Thessaloniki"}
-                subtitle={"Electrical and Computer Engineering Degree"}
-                description={"Degree Grade 7.27/10"}
-              />
+              {this.props.educationData.map((el) => {
+                return (
+                  <EducationItem
+                    {...el}
+                    key={Math.floor(999999999 * Math.random())}
+                  />
+                );
+              })}
             </div>
             <div className="col-12 col-md-6">
               <h2>Seminars - Classes</h2>
-              <EducationItem
-                count={1}
-                date="2010 - 2022"
-                title={"Aristotle University of Thessaloniki"}
-                subtitle={"Electrical and Computer Engineering Degree"}
-                description={"Degree Grade 7.27 out of 10"}
-              />
-              <EducationItem
-                count={2}
-                date="2010 - 2021"
-                title={"Aristotle University of Thessaloniki"}
-                subtitle={"Electrical and Computer Engineering Degree"}
-                description={"Degree Grade 7.27/10"}
-              />
+              {this.props.seminarsData.map((el) => {
+                return (
+                  <EducationItem
+                    {...el}
+                    key={Math.floor(999999999 * Math.random())}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>

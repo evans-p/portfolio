@@ -9,17 +9,10 @@ import MainButton from "../MainButton/MainButton";
 
 class ContactBody extends React.Component {
   renderContactItems() {
-    let data = [
-      ["Telephone1", <i className="bi bi-telephone"></i>, "+30 6978 418 570"],
-      ["Telephone2", <i className="bi bi-telephone"></i>, "+30 6978 418 570"],
-      ["Telephone3", <i className="bi bi-telephone"></i>, "+30 6978 418 570"],
-      ["Telephone4", <i className="bi bi-telephone"></i>, "+30 6978 418 570"],
-    ];
-
     return (
       <div className="row">
         <div className="col d-flex flex-column ">
-          {data.map((el) => {
+          {this.props.data.map((el) => {
             return (
               <ContactItem
                 title={el[0]}

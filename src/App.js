@@ -9,6 +9,15 @@ import Contact from "./Components/Contact/Contact";
 import Portfolio from "./Components/Portfolio/Portfolio";
 
 import { portfolioData, portfolioHeader } from "./Data/porfolioData";
+import { contactData, contactHeader } from "./Data/contactData";
+import {
+  skillData,
+  seminarsData,
+  aboutHeader,
+  infoDataLeft,
+  infoDataRight,
+  educationData,
+} from "./Data/aboutData";
 
 export default function App(props) {
   const [width, setWdith] = useState(window.innerWidth);
@@ -52,8 +61,26 @@ export default function App(props) {
 
       <Routes>
         <Route path="/" element={<Home width={width} loaded={loaded} />} />
-        <Route path="/about" element={<About width={width} />} />
-        <Route path="/contact" element={<Contact width={width} />} />
+        <Route
+          path="/about"
+          element={
+            <About
+              width={width}
+              skillData={skillData}
+              seminarsData={seminarsData}
+              aboutHeader={aboutHeader}
+              infoDataLeft={infoDataLeft}
+              infoDataRight={infoDataRight}
+              educationData={educationData}
+            />
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <Contact width={width} data={contactData} header={contactHeader} />
+          }
+        />
         <Route
           path="/portfolio"
           element={

@@ -12,7 +12,7 @@ class EducationItem extends React.Component {
         <span className="bullet"></span>
         <div className="card">
           <span className="date">
-            <i className="bi bi-calendar-event-fill"></i>
+            {this.props.icon}
             {this.props.date}
           </span>
           <span className="title">{this.props.title}</span>

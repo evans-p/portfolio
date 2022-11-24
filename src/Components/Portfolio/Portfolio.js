@@ -1,39 +1,66 @@
 import React from "react";
+import { CSSTransition } from "react-transition-group";
 
 import Header from "../Header/Header";
 import PortfolioItem from "../PortfolioItem/PortfolioItem";
+import PortfolioModal from "../PortfolioModal/PortfolioModal";
 
 import "./Portfolio.css";
 
 class Portfolio extends React.Component {
-  renderPortfolioItems() {
-    const tmp = new Array(11).fill(0);
+  constructor(props) {
+    super(props);
 
+    const nodeRef = React.createRef();
+    this.renderPortfolioItems = this.renderPortfolioItems.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.closeModal();
+  }
+
+  renderPortfolioItems() {
     if (this.props.width >= 992) {
       return (
         <div className="row gx-4">
           <div className="col-12 col-md-6 col-lg-4">
-            {tmp.slice(0, 1 + Math.floor(tmp.length / 3)).map((el, idx) => (
-              <PortfolioItem key={Math.floor(9999999 * Math.random)} id={idx} />
-            ))}
-          </div>
-          <div className="col-12 col-md-6 col-lg-4">
-            {tmp
-              .slice(
-                1 + Math.floor(tmp.length / 3),
-                1 + Math.floor((2 * tmp.length) / 3)
-              )
+            {this.props.data
+              .slice(0, Math.floor(this.props.data.length / 3))
               .map((el, idx) => (
                 <PortfolioItem
-                  key={Math.floor(9999999 * Math.random)}
-                  id={idx}
+                  key={el.id}
+                  {...el}
+                  openModal={this.props.openModal}
+                  closeModal={this.props.closeModal}
                 />
               ))}
           </div>
           <div className="col-12 col-md-6 col-lg-4">
-            {tmp.slice(1 + Math.floor((2 * tmp.length) / 3)).map((el, idx) => (
-              <PortfolioItem key={Math.floor(9999999 * Math.random)} id={idx} />
-            ))}
+            {this.props.data
+              .slice(
+                Math.floor(this.props.data.length / 3),
+                Math.floor((2 * this.props.data.length) / 3)
+              )
+              .map((el, idx) => (
+                <PortfolioItem
+                  key={el.id}
+                  {...el}
+                  openModal={this.props.openModal}
+                  closeModal={this.props.closeModal}
+                />
+              ))}
+          </div>
+          <div className="col-12 col-md-6 col-lg-4">
+            {this.props.data
+              .slice(Math.floor((2 * this.props.data.length) / 3))
+              .map((el, idx) => (
+                <PortfolioItem
+                  key={el.id}
+                  {...el}
+                  openModal={this.props.openModal}
+                  closeModal={this.props.closeModal}
+                />
+              ))}
           </div>
         </div>
       );
@@ -43,14 +70,28 @@ class Portfolio extends React.Component {
       return (
         <div className="row gx-4">
           <div className="col-12 col-md-6 col-lg-4">
-            {tmp.slice(0, 1 + Math.floor(tmp.length / 2)).map((el, idx) => (
-              <PortfolioItem key={Math.floor(9999999 * Math.random)} id={idx} />
-            ))}
+            {this.props.data
+              .slice(0, Math.floor(this.props.data.length / 2))
+              .map((el, idx) => (
+                <PortfolioItem
+                  key={el.id}
+                  {...el}
+                  openModal={this.props.openModal}
+                  closeModal={this.props.closeModal}
+                />
+              ))}
           </div>
           <div className="col-12 col-md-6 col-lg-4">
-            {tmp.slice(1 + Math.floor(tmp.length / 2)).map((el, idx) => (
-              <PortfolioItem key={Math.floor(9999999 * Math.random)} id={idx} />
-            ))}
+            {this.props.data
+              .slice(Math.floor(this.props.data.length / 2))
+              .map((el, idx) => (
+                <PortfolioItem
+                  key={el.id}
+                  {...el}
+                  openModal={this.props.openModal}
+                  closeModal={this.props.closeModal}
+                />
+              ))}
           </div>
         </div>
       );
@@ -59,8 +100,13 @@ class Portfolio extends React.Component {
     return (
       <div className="row gx-4">
         <div className="col-12 col-md-6 col-lg-4">
-          {tmp.map((el, idx) => (
-            <PortfolioItem key={Math.floor(9999999 * Math.random)} id={idx} />
+          {this.props.data.map((el, idx) => (
+            <PortfolioItem
+              key={el.id}
+              {...el}
+              openModal={this.props.openModal}
+              closeModal={this.props.closeModal}
+            />
           ))}
         </div>
       </div>
@@ -68,18 +114,33 @@ class Portfolio extends React.Component {
   }
 
   render() {
-    const headParameters = {
-      titleMain: "my",
-      titleSecondary: "portfolio",
-      subtitle:
-        "A FEW RECENT DESIGN AND CODING PROJECTS. WANT TO SEE MORE? EMAIL ME.",
-    };
     return (
       <div className="Portfolio">
-        <Header {...headParameters} />
-        <div className="container">
-          <div className="row gx-4">{this.renderPortfolioItems()}</div>
-        </div>
+        <Header {...this.props.header} />
+        <div className="container">{this.renderPortfolioItems()}</div>
+        <CSSTransition
+          in={this.props.modalOpen}
+          nodeRef={this.nodeRef}
+          timeout={300}
+          classNames="fade"
+          unmountOnExit
+        >
+          <div className="overlay" onClick={this.props.closeModal}></div>
+        </CSSTransition>
+
+        <CSSTransition
+          in={this.props.modalOpen}
+          nodeRef={this.nodeRef}
+          timeout={300}
+          classNames="slide-in"
+          unmountOnExit
+        >
+          <PortfolioModal
+            {...this.props.modalData}
+            width={this.props.width}
+            closeModal={this.props.closeModal}
+          />
+        </CSSTransition>
       </div>
     );
   }

@@ -1,15 +1,30 @@
 import React from "react";
 
 import "./PortfolioItem.css";
-import img from "../../Assets/background-image.jpg";
 
 class PortfolioItem extends React.Component {
   render() {
+    const data = {
+      id: this.props.id,
+      title: this.props.title,
+      description: this.props.description,
+      technologies: this.props.technologies,
+      duration: this.props.duration,
+      img: this.props.img,
+    };
+
     return (
-      <div className="PortfolioItem">
-        <span>image title {this.props.id}</span>
-        <img src={img} />
-      </div>
+      <>
+        <div
+          className="PortfolioItem"
+          onClick={() => {
+            this.props.openModal(data);
+          }}
+        >
+          <span>{this.props.title}</span>
+          <img src={this.props.img} alt={this.props.title} />
+        </div>
+      </>
     );
   }
 }

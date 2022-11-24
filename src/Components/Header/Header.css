@@ -39,3 +39,11 @@
     content: none;
   }
 }
+@media screen and (max-width: 480px) {
+  .Header h1 {
+    font-size: 35px;
+  }
+  .Header h3 {
+    font-size: 14px;
+  }
+}

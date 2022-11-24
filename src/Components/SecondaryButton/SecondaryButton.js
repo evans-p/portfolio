@@ -12,7 +12,11 @@ class SecondaryButton extends React.Component {
       : { ...style };
 
     return (
-      <button className="SecondaryButton" style={style}>
+      <button
+        className="SecondaryButton"
+        style={style}
+        onClick={this.props.action}
+      >
         <span>
           {this.props.icon}
           {this.props.text}

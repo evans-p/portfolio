@@ -2,14 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./MenuAlternative.css";
 
-class MenuAlternative extends React.Component {
-  render() {
+export default function MenuAlternative(props) {
+  if (props.modalOpen && props.location.pathname === "/portfolio") {
     return (
-      <Link to="/" className="MenuAlternative">
+      <div className="MenuAlternative" onClick={props.closeModal}>
         <i className="bi bi-arrow-left-short"></i>
-      </Link>
+      </div>
     );
   }
+  return (
+    <Link to="/" className="MenuAlternative">
+      <i className="bi bi-arrow-left-short"></i>
+    </Link>
+  );
 }
-
-export default MenuAlternative;

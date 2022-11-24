@@ -9,7 +9,7 @@
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--font-color-main);
-  background-color: var(--app-secondary-color);
+  background-color: transparent;
   position: relative;
   overflow: hidden;
   transition-duration: 0.6s;

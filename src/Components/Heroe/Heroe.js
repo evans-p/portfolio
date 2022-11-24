@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import "./Heroe.css";
 import "./carousel.scss";
 
@@ -42,15 +42,19 @@ class Heroe extends React.Component {
               design.
             </p>
             <div className="buttons">
-              <MainButton
-                icon={<i className="bi bi-person-fill"></i>}
-                text={"more about me"}
-              />
-              <SecondaryButton
-                icon={<i className="bi bi-briefcase-fill"></i>}
-                text={"portfolio"}
-                marginLeft={20}
-              />
+              <Link to="/about">
+                <MainButton
+                  icon={<i className="bi bi-person-fill"></i>}
+                  text={"more about me"}
+                />
+              </Link>
+              <Link to="/portfolio">
+                <SecondaryButton
+                  icon={<i className="bi bi-briefcase-fill"></i>}
+                  text={"portfolio"}
+                  marginLeft={20}
+                />
+              </Link>
             </div>
           </div>
         </div>

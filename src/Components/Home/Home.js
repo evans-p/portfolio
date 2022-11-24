@@ -11,7 +11,9 @@ class Home extends React.Component {
     return (
       <div className="Home">
         {this.props.width < 950 ? <HeroeAlternative /> : null}
-        {this.props.width >= 950 ? <Heroe /> : null}
+        {this.props.width >= 950 ? (
+          <Heroe portrait={this.props.portrait} />
+        ) : null}
         {!this.props.loaded ? <Loader /> : null}
       </div>
     );

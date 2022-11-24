@@ -6,16 +6,13 @@ import "./carousel.scss";
 import MainButton from "../MainButton/MainButton";
 import SecondaryButton from "../SecondaryButton/SecondaryButton";
 
-import portrait from "../../Assets/img_portfolio.jpg";
-
 class Heroe extends React.Component {
   render() {
     return (
       <div className="Heroe  d-flex align-items-center">
-        {/* <div className="Heroe container d-flex align-items-center"> */}
         <div className="row">
           <div className="col d-flex justify-content-end">
-            <img src={portrait} alt="portrait" loading="lazy" />
+            <img src={this.props.portrait} alt="portrait" loading="lazy" />
           </div>
           <div className="col right">
             <h3>Hi there!</h3>

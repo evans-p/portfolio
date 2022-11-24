@@ -4,21 +4,12 @@ import "./PortfolioItem.css";
 
 class PortfolioItem extends React.Component {
   render() {
-    const data = {
-      id: this.props.id,
-      title: this.props.title,
-      description: this.props.description,
-      technologies: this.props.technologies,
-      duration: this.props.duration,
-      img: this.props.img,
-    };
-
     return (
       <>
         <div
           className="PortfolioItem"
           onClick={() => {
-            this.props.openModal(data);
+            this.props.openModal(this.props);
           }}
         >
           <span>{this.props.title}</span>

@@ -51,10 +51,21 @@ const portfolioData = [
   {
     id: "F6",
     title: "diploma thesis 6",
-    description: "My diploma thesis",
-    technologies: "html css javaScript",
-    duration: "9 months",
     img: img,
+    info: [
+      [<i className="bi bi-file-earmark-text"></i>, "project", "website"],
+      [
+        <i className="bi bi-file-earmark-text"></i>,
+        "description",
+        "My diploma thesis",
+      ],
+      [
+        <i className="bi bi-file-earmark-text"></i>,
+        "technologies",
+        "html css javaScript",
+      ],
+      [<i className="bi bi-file-earmark-text"></i>, "duration", "9 months"],
+    ],
   },
 ];
 

@@ -55,12 +55,15 @@
 .PortfolioModal li .label {
   margin-right: 5px;
   color: var(--font-color-main);
+  text-transform: capitalize;
+  font-family: "Open Sans", sans-serif;
 }
 .PortfolioModal li .value {
   margin-left: 5px;
   color: var(--font-color-main);
   font-weight: 600;
   text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
 }
 
 @media screen and (max-width: 949px) {

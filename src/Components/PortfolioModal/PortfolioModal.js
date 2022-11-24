@@ -15,26 +15,17 @@ class PortfolioModal extends React.Component {
             <div className="col d-flex flex-column align-items-start">
               <h3>{this.props.title}</h3>
               <ul>
-                <li>
-                  <i className="bi bi-file-earmark-text"></i>
-                  <span className="label">project</span>:
-                  <span className="value">website</span>
-                </li>
-                <li>
-                  <i className="bi bi-file-earmark-text"></i>
-                  <span className="label">project</span>:
-                  <span className="value">website</span>
-                </li>
-                <li>
-                  <i className="bi bi-file-earmark-text"></i>
-                  <span className="label">project</span>:
-                  <span className="value">website</span>
-                </li>
-                <li>
-                  <i className="bi bi-file-earmark-text"></i>
-                  <span className="label">project</span>:
-                  <span className="value">website</span>
-                </li>
+                {this.props.info
+                  ? this.props.info.map((el) => {
+                      return (
+                        <li key={Math.floor(999999999 * Math.random())}>
+                          {el[0]}
+                          <span className="label">{el[1]}</span>:
+                          <span className="value">{el[2]}</span>
+                        </li>
+                      );
+                    })
+                  : null}
               </ul>
               <MainButton
                 text="Preview"

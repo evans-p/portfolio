@@ -4,8 +4,6 @@ import "./Info.css";
 
 import MainButton from "../MainButton/MainButton";
 
-import portrait from "../../Assets/img_portfolio.jpg";
-
 class Info extends React.Component {
   renderInfoLeft() {
     return (
@@ -72,7 +70,7 @@ class Info extends React.Component {
                 : "left col-12 col-lg-6 d-flex justify-content-center"
             }
           >
-            <img src={portrait} alt="portrait" loading="lazy" />
+            <img src={this.props.portrait} alt="portrait" loading="lazy" />
           </div>
           <div
             className={

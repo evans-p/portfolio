@@ -11,6 +11,7 @@ class About extends React.Component {
       <div className="About">
         <Header {...this.props.aboutHeader} />
         <Info
+          portrait={this.props.portrait}
           width={this.props.width}
           infoDataLeft={this.props.infoDataLeft}
           infoDataRight={this.props.infoDataRight}

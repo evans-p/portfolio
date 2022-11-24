@@ -8,6 +8,8 @@ import About from "./Components/About/About";
 import Contact from "./Components/Contact/Contact";
 import Portfolio from "./Components/Portfolio/Portfolio";
 
+import portrait from "./Assets/img_portfolio.jpg";
+
 import { portfolioData, portfolioHeader } from "./Data/porfolioData";
 import { contactData, contactHeader } from "./Data/contactData";
 import {
@@ -60,11 +62,15 @@ export default function App(props) {
       ) : null}
 
       <Routes>
-        <Route path="/" element={<Home width={width} loaded={loaded} />} />
+        <Route
+          path="/"
+          element={<Home width={width} loaded={loaded} portrait={portrait} />}
+        />
         <Route
           path="/about"
           element={
             <About
+              portrait={portrait}
               width={width}
               skillData={skillData}
               seminarsData={seminarsData}

@@ -12,7 +12,7 @@ class MainButton extends React.Component {
       : { ...style };
 
     return (
-      <button className="MainButton" style={style}>
+      <button className="MainButton" style={style} onClick={this.props.action}>
         <span>
           {this.props.icon}
           {this.props.text}

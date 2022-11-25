@@ -7,7 +7,15 @@ class ContactTextArea extends React.Component {
     return (
       <div className="ContactTextArea">
         <i className="bi bi-chat-fill"></i>
-        <textarea className="message" placeholder="YOUR MESSAGE"></textarea>
+        <textarea
+          className="message"
+          placeholder="YOUR MESSAGE"
+          name={this.props.name}
+          value={this.props.value}
+          onChange={(e) => {
+            this.props.handleChange(e.target.value);
+          }}
+        ></textarea>
       </div>
     );
   }

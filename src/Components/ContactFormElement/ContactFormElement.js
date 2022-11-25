@@ -7,7 +7,15 @@ class ContactFormElement extends React.Component {
     return (
       <div className="ContactFormElement">
         {this.props.icon}
-        <input type={this.props.type} placeholder={this.props.placeholder} />
+        <input
+          type={this.props.type}
+          placeholder={this.props.placeholder}
+          name={this.props.name}
+          value={this.props.value}
+          onChange={(e) => {
+            this.props.handleChange(e.target.value);
+          }}
+        />
       </div>
     );
   }

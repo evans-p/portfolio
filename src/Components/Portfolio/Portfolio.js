@@ -8,13 +8,6 @@ import PortfolioModal from "../PortfolioModal/PortfolioModal";
 import "./Portfolio.css";
 
 class Portfolio extends React.Component {
-  constructor(props) {
-    super(props);
-
-    const nodeRef = React.createRef();
-    this.renderPortfolioItems = this.renderPortfolioItems.bind(this);
-  }
-
   componentDidMount() {
     this.props.closeModal();
   }
@@ -120,7 +113,7 @@ class Portfolio extends React.Component {
         <div className="container">{this.renderPortfolioItems()}</div>
         <CSSTransition
           in={this.props.modalOpen}
-          nodeRef={this.nodeRef}
+          nodeRef={React.createRef()}
           timeout={300}
           classNames="fade"
           unmountOnExit

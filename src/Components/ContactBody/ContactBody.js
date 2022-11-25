@@ -33,12 +33,13 @@ class ContactBody extends React.Component {
           <div className="col-12 col-md-4 d-flex flex-column">
             {this.renderContactItems()}
           </div>
-          <div
+          <form
             className={
               this.props.width >= 768
                 ? "form col-12 col-md-8 d-flex flex-column align-items-start"
                 : "form col-12 col-md-8 d-flex flex-column align-items-start mt-1"
             }
+            onSubmit={this.props.handleOnContactSubmit}
           >
             <p>
               If you have any suggestion, project or even you want to say hello,
@@ -48,18 +49,28 @@ class ContactBody extends React.Component {
               type="text"
               placeholder="YOUR NAME"
               icon={<i className="bi bi-person-fill"></i>}
+              name={"name"}
+              value={this.props.name}
+              handleChange={this.props.setName}
             />
             <ContactFormElement
               type="email"
               placeholder="YOUR EMAIL"
               icon={<i className="bi bi-envelope-open-fill"></i>}
+              name={"email"}
+              value={this.props.email}
+              handleChange={this.props.setEmail}
             />
-            <ContactTextArea />
+            <ContactTextArea
+              name={"message"}
+              value={this.props.message}
+              handleChange={this.props.setMessage}
+            />
             <MainButton
               icon={<i className="bi bi-send-fill"></i>}
               text={"send message"}
             />
-          </div>
+          </form>
         </div>
       </div>
     );

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
+import emailjs from "@emailjs/browser";
+import { useSnackbar } from "notistack";
 
 import Menu from "./Components/Menu/Menu";
 import MenuAlternative from "./Components/MenuAlternative/MenuAlternative";
@@ -21,11 +23,18 @@ import {
   educationData,
 } from "./Data/aboutData";
 
+import { mailJSData } from "./Data/mailJSData";
+
 export default function App(props) {
   const [width, setWdith] = useState(window.innerWidth);
   const [loaded, setLoaded] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalData, setModalData] = useState({});
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
   const openModal = (data) => {
     setModalOpen(true);
@@ -48,6 +57,60 @@ export default function App(props) {
 
   const handleWindowResize = () => {
     setWdith(window.innerWidth);
+  };
+
+  const validateContactData = () => {
+    let errors = [];
+    if (name.length === 0 || email.length === 0 || message.length === 0) {
+      errors.push("Please fill all the required fields.");
+      return errors;
+    }
+
+    if (!email.includes("@")) {
+      errors.push("Email field must contain '@' symbol.");
+    }
+
+    return errors;
+  };
+
+  const handleOnContactSubmit = (e) => {
+    e.preventDefault();
+
+    const errors = validateContactData();
+
+    if (validateContactData().length > 0) {
+      errors.map((error) => {
+        enqueueSnackbar(error);
+      });
+      return;
+    }
+
+    emailjs
+      .send(
+        mailJSData.serviceId,
+        mailJSData.templateId,
+        {
+          from_name: name,
+          to_name: "Evans Poulakis",
+          message: message,
+          from_email: email,
+        },
+        mailJSData.publicKey
+      )
+      .then(
+        (response) => {
+          enqueueSnackbar(
+            "The message has been received, we will contact you soon."
+          );
+
+          setName("");
+          setEmail("");
+          setMessage("");
+        },
+        (err) => {
+          enqueueSnackbar("An error has occured, please try again later.");
+        }
+      );
   };
 
   return (
@@ -84,7 +147,18 @@ export default function App(props) {
         <Route
           path="/contact"
           element={
-            <Contact width={width} data={contactData} header={contactHeader} />
+            <Contact
+              width={width}
+              data={contactData}
+              header={contactHeader}
+              name={name}
+              setName={setName}
+              email={email}
+              setEmail={setEmail}
+              message={message}
+              setMessage={setMessage}
+              handleOnContactSubmit={handleOnContactSubmit}
+            />
           }
         />
         <Route

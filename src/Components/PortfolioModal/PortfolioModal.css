@@ -7,8 +7,6 @@
   right: 0;
   overflow: scroll;
 }
-/* .PortfolioModal .wrapper {
-} */
 
 .PortfolioModal img {
   width: calc(100% - 60px);

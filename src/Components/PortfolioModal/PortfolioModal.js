@@ -27,10 +27,18 @@ class PortfolioModal extends React.Component {
                     })
                   : null}
               </ul>
-              <MainButton
-                text="Preview"
-                icon={<i className="bi bi-box-arrow-up-right"></i>}
-              />
+              {this.props.link ? (
+                <a
+                  href={this.props.link}
+                  target="_blank"
+                  style={{ marginBottom: "30px" }}
+                >
+                  <MainButton
+                    text="Preview"
+                    icon={<i className="bi bi-box-arrow-up-right"></i>}
+                  />
+                </a>
+              ) : null}
             </div>
             {this.props.width >= 950 ? (
               <div className="col d-flex justify-content-end">

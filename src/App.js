@@ -9,6 +9,7 @@ import Home from "./Components/Home/Home";
 import About from "./Components/About/About";
 import Contact from "./Components/Contact/Contact";
 import Portfolio from "./Components/Portfolio/Portfolio";
+import Error from "./Components/Error/Error";
 
 import portrait from "./Assets/img_portfolio.jpg";
 
@@ -34,7 +35,7 @@ export default function App(props) {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
 
   const openModal = (data) => {
     setModalOpen(true);
@@ -175,6 +176,7 @@ export default function App(props) {
             />
           }
         />
+        <Route path="*" element={<Error />} />
       </Routes>
     </>
   );

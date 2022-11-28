@@ -52,6 +52,7 @@ const portfolioData = [
     id: "F6",
     title: "diploma thesis 6",
     img: img,
+    link: "https://github.com/evans-p/diploma-thesis",
     info: [
       [<i className="bi bi-file-earmark-text"></i>, "project", "website"],
       [

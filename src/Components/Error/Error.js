@@ -10,13 +10,13 @@ export default function Error(props) {
   }, []);
 
   return (
-    <div className="Error d-flex justify-content-center align-items-center flex-column">
-      <h1>
+    <div className="Error container d-flex justify-content-center align-items-center flex-column">
+      <section>
         <span>4</span>
         <span>0</span>
         <span>4</span>
         <span>.</span>
-      </h1>
+      </section>
       <h3>We could not find the page you were looking for</h3>
     </div>
   );

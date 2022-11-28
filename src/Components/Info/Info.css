@@ -1,16 +1,16 @@
 .Info .left img {
-  width: 440px;
+  width: 420px;
   height: auto;
   margin-right: 50px;
+  z-index: 3;
 }
 .Info .left::before {
   margin-right: 50px;
   content: "";
   border: 6px solid var(--app-color-main);
-  width: 440px;
-  height: 440px;
+  width: 420px;
+  height: 420px;
   position: absolute;
-  z-index: -1;
   transform: translate3d(26px, 26px, -26px);
 }
 

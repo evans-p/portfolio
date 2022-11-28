@@ -38,6 +38,9 @@
   .Header h3::after {
     content: none;
   }
+  .Header h3 {
+    padding: 0 10px 0 10px;
+  }
 }
 @media screen and (max-width: 480px) {
   .Header h1 {

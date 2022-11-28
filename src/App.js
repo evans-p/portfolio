@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
+import { SwitchTransition, CSSTransition } from "react-transition-group";
 import emailjs from "@emailjs/browser";
 import { useSnackbar } from "notistack";
 
@@ -15,6 +16,7 @@ import portrait from "./Assets/img_portfolio.jpg";
 
 import { portfolioData, portfolioHeader } from "./Data/porfolioData";
 import { contactData, contactHeader } from "./Data/contactData";
+import { mailJSData } from "./Data/mailJSData";
 import {
   skillData,
   seminarsData,
@@ -24,7 +26,7 @@ import {
   educationData,
 } from "./Data/aboutData";
 
-import { mailJSData } from "./Data/mailJSData";
+import "./App.css";
 
 export default function App(props) {
   const [width, setWdith] = useState(window.innerWidth);
@@ -34,8 +36,30 @@ export default function App(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-
+  const location = useLocation();
   const { enqueueSnackbar } = useSnackbar();
+
+  const homeRef = React.useRef();
+  const aboutRef = React.useRef();
+  const contactRef = React.useRef();
+  const errorRef = React.useRef();
+
+  let nodeRef = null;
+
+  switch (location.pathname) {
+    case "/":
+      nodeRef = homeRef;
+      break;
+    case "/about":
+      nodeRef = aboutRef;
+      break;
+    case "/contact":
+      nodeRef = contactRef;
+      break;
+    default:
+      nodeRef = errorRef;
+      break;
+  }
 
   const openModal = (data) => {
     setModalOpen(true);
@@ -45,8 +69,6 @@ export default function App(props) {
   const closeModal = () => {
     setModalOpen(false);
   };
-
-  const location = useLocation();
 
   useEffect(() => {
     window.addEventListener("resize", handleWindowResize);
@@ -115,7 +137,7 @@ export default function App(props) {
   };
 
   return (
-    <>
+    <div className="App">
       {width >= 950 ? <Menu /> : null}
       {width < 950 && location.pathname !== "/" ? (
         <MenuAlternative
@@ -124,60 +146,73 @@ export default function App(props) {
           closeModal={closeModal}
         />
       ) : null}
-
-      <Routes>
-        <Route
-          path="/"
-          element={<Home width={width} loaded={loaded} portrait={portrait} />}
-        />
-        <Route
-          path="/about"
-          element={
-            <About
-              portrait={portrait}
-              width={width}
-              skillData={skillData}
-              seminarsData={seminarsData}
-              aboutHeader={aboutHeader}
-              infoDataLeft={infoDataLeft}
-              infoDataRight={infoDataRight}
-              educationData={educationData}
-            />
-          }
-        />
-        <Route
-          path="/contact"
-          element={
-            <Contact
-              width={width}
-              data={contactData}
-              header={contactHeader}
-              name={name}
-              setName={setName}
-              email={email}
-              setEmail={setEmail}
-              message={message}
-              setMessage={setMessage}
-              handleOnContactSubmit={handleOnContactSubmit}
-            />
-          }
-        />
-        <Route
-          path="/portfolio"
-          element={
-            <Portfolio
-              width={width}
-              openModal={openModal}
-              closeModal={closeModal}
-              modalOpen={modalOpen}
-              modalData={modalData}
-              data={portfolioData}
-              header={portfolioHeader}
-            />
-          }
-        />
-        <Route path="*" element={<Error />} />
-      </Routes>
-    </>
+      <SwitchTransition>
+        <CSSTransition
+          key={location.pathname}
+          nodeRef={nodeRef}
+          classNames="page"
+          timeout={300}
+          unmountOnExit
+        >
+          <div ref={nodeRef} className="page">
+            <Routes location={location.pathname}>
+              <Route
+                path="/"
+                element={
+                  <Home width={width} loaded={loaded} portrait={portrait} />
+                }
+              />
+              <Route
+                path="/about"
+                element={
+                  <About
+                    portrait={portrait}
+                    width={width}
+                    skillData={skillData}
+                    seminarsData={seminarsData}
+                    aboutHeader={aboutHeader}
+                    infoDataLeft={infoDataLeft}
+                    infoDataRight={infoDataRight}
+                    educationData={educationData}
+                  />
+                }
+              />
+              <Route
+                path="/contact"
+                element={
+                  <Contact
+                    width={width}
+                    data={contactData}
+                    header={contactHeader}
+                    name={name}
+                    setName={setName}
+                    email={email}
+                    setEmail={setEmail}
+                    message={message}
+                    setMessage={setMessage}
+                    handleOnContactSubmit={handleOnContactSubmit}
+                  />
+                }
+              />
+              <Route
+                path="/portfolio"
+                element={
+                  <Portfolio
+                    width={width}
+                    openModal={openModal}
+                    closeModal={closeModal}
+                    modalOpen={modalOpen}
+                    modalData={modalData}
+                    data={portfolioData}
+                    header={portfolioHeader}
+                  />
+                }
+              />
+              <Route path="*" element={<Error />} />
+            </Routes>
+          </div>
+        </CSSTransition>
+      </SwitchTransition>
+    </div>
   );
 }

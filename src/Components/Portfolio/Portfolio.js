@@ -7,6 +7,8 @@ import PortfolioModal from "../PortfolioModal/PortfolioModal";
 
 import "./Portfolio.css";
 
+import { portfolioData, portfolioHeader } from "../../Data/porfolioData";
+
 class Portfolio extends React.Component {
   componentDidMount() {
     this.props.closeModal();
@@ -17,8 +19,8 @@ class Portfolio extends React.Component {
       return (
         <div className="row gx-4">
           <div className="col-12 col-md-6 col-lg-4">
-            {this.props.data
-              .slice(0, Math.floor(this.props.data.length / 3))
+            {portfolioData
+              .slice(0, Math.floor(portfolioData.length / 3))
               .map((el, idx) => (
                 <PortfolioItem
                   key={el.id}
@@ -29,10 +31,10 @@ class Portfolio extends React.Component {
               ))}
           </div>
           <div className="col-12 col-md-6 col-lg-4">
-            {this.props.data
+            {portfolioData
               .slice(
-                Math.floor(this.props.data.length / 3),
-                Math.floor((2 * this.props.data.length) / 3)
+                Math.floor(portfolioData.length / 3),
+                Math.floor((2 * portfolioData.length) / 3)
               )
               .map((el, idx) => (
                 <PortfolioItem
@@ -44,8 +46,8 @@ class Portfolio extends React.Component {
               ))}
           </div>
           <div className="col-12 col-md-6 col-lg-4">
-            {this.props.data
-              .slice(Math.floor((2 * this.props.data.length) / 3))
+            {portfolioData
+              .slice(Math.floor((2 * portfolioData.length) / 3))
               .map((el, idx) => (
                 <PortfolioItem
                   key={el.id}
@@ -63,8 +65,8 @@ class Portfolio extends React.Component {
       return (
         <div className="row gx-4">
           <div className="col-12 col-md-6 col-lg-4">
-            {this.props.data
-              .slice(0, Math.floor(this.props.data.length / 2))
+            {portfolioData
+              .slice(0, Math.floor(portfolioData.length / 2))
               .map((el, idx) => (
                 <PortfolioItem
                   key={el.id}
@@ -75,8 +77,8 @@ class Portfolio extends React.Component {
               ))}
           </div>
           <div className="col-12 col-md-6 col-lg-4">
-            {this.props.data
-              .slice(Math.floor(this.props.data.length / 2))
+            {portfolioData
+              .slice(Math.floor(portfolioData.length / 2))
               .map((el, idx) => (
                 <PortfolioItem
                   key={el.id}
@@ -93,7 +95,7 @@ class Portfolio extends React.Component {
     return (
       <div className="row gx-4">
         <div className="col-12 col-md-6 col-lg-4">
-          {this.props.data.map((el, idx) => (
+          {portfolioData.map((el, idx) => (
             <PortfolioItem
               key={el.id}
               {...el}
@@ -109,7 +111,7 @@ class Portfolio extends React.Component {
   render() {
     return (
       <div className="Portfolio">
-        <Header {...this.props.header} />
+        <Header {...portfolioHeader} />
         <div className="container">{this.renderPortfolioItems()}</div>
         <CSSTransition
           in={this.props.modalOpen}

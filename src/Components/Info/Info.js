@@ -5,7 +5,9 @@ import "./Info.css";
 
 import MainButton from "../MainButton/MainButton";
 
+import portrait from "../../Assets/img_portfolio.jpg";
 import CV from "../../Assets/CV_Poulakis_Evaggelos.pdf";
+import { infoDataLeft, infoDataRight } from "../../Data/aboutData";
 
 class Info extends React.Component {
   renderInfoLeft() {
@@ -17,7 +19,7 @@ class Info extends React.Component {
             : "col-6 d-flex flex-column align-items-end"
         }
       >
-        {this.props.infoDataLeft.map((el) => {
+        {infoDataLeft.map((el) => {
           return (
             <li key={Math.floor(999999999 * Math.random())}>
               <h6
@@ -46,7 +48,7 @@ class Info extends React.Component {
             : "col-6 d-flex flex-column align-items-start"
         }
       >
-        {this.props.infoDataRight.map((el) => {
+        {infoDataRight.map((el) => {
           return (
             <li key={Math.floor(999999999 * Math.random())}>
               <h6
@@ -73,7 +75,7 @@ class Info extends React.Component {
                 : "left col-12 col-lg-6 d-flex justify-content-center"
             }
           >
-            <img src={this.props.portrait} alt="portrait" loading="lazy" />
+            <img src={portrait} alt="portrait" />
           </div>
           <div
             className={

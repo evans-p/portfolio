@@ -9,7 +9,7 @@
 
 .Loader .mid {
   width: 300vw;
-  height: 2vh;
+  height: 1vh;
   background-color: var(--app-color-main);
   display: flex;
   justify-content: center;
@@ -21,14 +21,14 @@
 
 .Loader .mid .center {
   width: 100vw;
-  height: 2vh;
+  height: 1vh;
   background-color: var(--menu-secondary-color);
 }
 
 .Loader .top {
   background-color: var(--menu-secondary-color);
   width: 100vw;
-  height: 49vh;
+  height: 49.5vh;
   transition: background-color 1s ease-in-out;
   transition: transform 1s ease-in-out 1s;
   display: flex;
@@ -39,7 +39,7 @@
 .Loader .bottom {
   background-color: var(--menu-secondary-color);
   width: 100vw;
-  height: 49vh;
+  height: 49.5vh;
   transition: background-color 1s ease-in-out;
   transition: transform 1s ease-in-out 1s;
   display: flex;

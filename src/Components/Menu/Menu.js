@@ -38,22 +38,16 @@ class Menu extends React.Component {
             <span></span>
           </div>
           <div className={this.state.open ? "options options-open" : "options"}>
-            {/* <div className={this.state.open ? "option option-open " : "option"}>
-            <i className="bi bi-house-door-fill"></i>
-            <h3>home</h3>
-          </div> */}
             <NavLink
               onClick={this.closeMenu}
               to="/"
               className={({ isActive }) => {
-                {
-                  if (isActive) {
-                    return this.state.open
-                      ? "option option-open active"
-                      : "option active";
-                  }
-                  return this.state.open ? "option option-open" : "option";
+                if (isActive) {
+                  return this.state.open
+                    ? "option option-open active"
+                    : "option active";
                 }
+                return this.state.open ? "option option-open" : "option";
               }}
             >
               <i className="bi bi-house-door-fill"></i>
@@ -63,14 +57,12 @@ class Menu extends React.Component {
               onClick={this.closeMenu}
               to="/about"
               className={({ isActive }) => {
-                {
-                  if (isActive) {
-                    return this.state.open
-                      ? "option option-open active"
-                      : "option active";
-                  }
-                  return this.state.open ? "option option-open" : "option";
+                if (isActive) {
+                  return this.state.open
+                    ? "option option-open active"
+                    : "option active";
                 }
+                return this.state.open ? "option option-open" : "option";
               }}
             >
               <i className="bi bi-person-fill"></i>
@@ -81,14 +73,12 @@ class Menu extends React.Component {
               onClick={this.closeMenu}
               to="/portfolio"
               className={({ isActive }) => {
-                {
-                  if (isActive) {
-                    return this.state.open
-                      ? "option option-open active"
-                      : "option active";
-                  }
-                  return this.state.open ? "option option-open" : "option";
+                if (isActive) {
+                  return this.state.open
+                    ? "option option-open active"
+                    : "option active";
                 }
+                return this.state.open ? "option option-open" : "option";
               }}
             >
               <i className="bi bi-briefcase-fill"></i>
@@ -98,14 +88,12 @@ class Menu extends React.Component {
               onClick={this.closeMenu}
               to="/contact"
               className={({ isActive }) => {
-                {
-                  if (isActive) {
-                    return this.state.open
-                      ? "option option-open active"
-                      : "option active";
-                  }
-                  return this.state.open ? "option option-open" : "option";
+                if (isActive) {
+                  return this.state.open
+                    ? "option option-open active"
+                    : "option active";
                 }
+                return this.state.open ? "option option-open" : "option";
               }}
             >
               <i className="bi bi-chat-fill"></i>

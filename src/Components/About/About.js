@@ -5,22 +5,21 @@ import Info from "../Info/Info";
 import Education from "../Education/Education";
 import Skills from "../Skills/Skills";
 
+import {
+  skillData,
+  seminarsData,
+  aboutHeader,
+  educationData,
+} from "../..//Data/aboutData";
+
 class About extends React.Component {
   render() {
     return (
       <div className="About">
-        <Header {...this.props.aboutHeader} />
-        <Info
-          portrait={this.props.portrait}
-          width={this.props.width}
-          infoDataLeft={this.props.infoDataLeft}
-          infoDataRight={this.props.infoDataRight}
-        />
-        <Education
-          seminarsData={this.props.seminarsData}
-          educationData={this.props.educationData}
-        />
-        <Skills width={this.props.width} skillData={this.props.skillData} />
+        <Header {...aboutHeader} />
+        <Info width={this.props.width} />
+        <Education seminarsData={seminarsData} educationData={educationData} />
+        <Skills width={this.props.width} skillData={skillData} />
       </div>
     );
   }

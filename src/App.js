@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
 import emailjs from "@emailjs/browser";
@@ -12,19 +12,8 @@ import Contact from "./Components/Contact/Contact";
 import Portfolio from "./Components/Portfolio/Portfolio";
 import Error from "./Components/Error/Error";
 
-import portrait from "./Assets/img_portfolio.jpg";
-
-import { portfolioData, portfolioHeader } from "./Data/porfolioData";
 import { contactData, contactHeader } from "./Data/contactData";
 import { mailJSData } from "./Data/mailJSData";
-import {
-  skillData,
-  seminarsData,
-  aboutHeader,
-  infoDataLeft,
-  infoDataRight,
-  educationData,
-} from "./Data/aboutData";
 
 import "./App.css";
 
@@ -41,6 +30,7 @@ export default function App(props) {
 
   const homeRef = React.useRef();
   const aboutRef = React.useRef();
+  const portfolioRef = React.useRef();
   const contactRef = React.useRef();
   const errorRef = React.useRef();
 
@@ -48,15 +38,23 @@ export default function App(props) {
 
   switch (location.pathname) {
     case "/":
+      window.document.title = "Evans Poulakis";
       nodeRef = homeRef;
       break;
+    case "/portfolio":
+      window.document.title = "Portfolio - Evans Poulakis";
+      nodeRef = portfolioRef;
+      break;
     case "/about":
+      window.document.title = "About - Evans Poulakis";
       nodeRef = aboutRef;
       break;
     case "/contact":
+      window.document.title = "Contact - Evans Poulakis";
       nodeRef = contactRef;
       break;
     default:
+      window.document.title = "Error - Evans Poulakis";
       nodeRef = errorRef;
       break;
   }
@@ -104,6 +102,7 @@ export default function App(props) {
     if (validateContactData().length > 0) {
       errors.map((error) => {
         enqueueSnackbar(error);
+        return null;
       });
       return;
     }
@@ -158,25 +157,9 @@ export default function App(props) {
             <Routes location={location.pathname}>
               <Route
                 path="/"
-                element={
-                  <Home width={width} loaded={loaded} portrait={portrait} />
-                }
+                element={<Home width={width} loaded={loaded} />}
               />
-              <Route
-                path="/about"
-                element={
-                  <About
-                    portrait={portrait}
-                    width={width}
-                    skillData={skillData}
-                    seminarsData={seminarsData}
-                    aboutHeader={aboutHeader}
-                    infoDataLeft={infoDataLeft}
-                    infoDataRight={infoDataRight}
-                    educationData={educationData}
-                  />
-                }
-              />
+              <Route path="/about" element={<About width={width} />} />
               <Route
                 path="/contact"
                 element={
@@ -203,8 +186,6 @@ export default function App(props) {
                     closeModal={closeModal}
                     modalOpen={modalOpen}
                     modalData={modalData}
-                    data={portfolioData}
-                    header={portfolioHeader}
                   />
                 }
               />

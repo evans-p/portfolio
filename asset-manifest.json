@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.78ba2b53.css",
+    "main.js": "/portfolio/static/js/main.1ee76de7.js",
+    "static/media/background-image.jpg": "/portfolio/static/media/background-image.3784c11bb9d9cb0b4cc9.jpg",
+    "static/media/img_portfolio.jpg": "/portfolio/static/media/img_portfolio.a8d444bc9a4483cbc3e1.jpg",
+    "static/media/portfolio-project.png": "/portfolio/static/media/portfolio-project.cace166f7b6916c19acb.png",
+    "static/media/degracom-project.png": "/portfolio/static/media/degracom-project.c91833d160aa7faa0330.png",
+    "static/media/football-statistics-project.png": "/portfolio/static/media/football-statistics-project.6b18ed6cdfd787438b82.png",
+    "static/media/mini-games-project.png": "/portfolio/static/media/mini-games-project.401bb0c7d1e707181bae.png",
+    "index.html": "/portfolio/index.html",
+    "main.78ba2b53.css.map": "/portfolio/static/css/main.78ba2b53.css.map",
+    "main.1ee76de7.js.map": "/portfolio/static/js/main.1ee76de7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.78ba2b53.css",
+    "static/js/main.1ee76de7.js"
+  ]
+}

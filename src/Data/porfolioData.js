@@ -1,4 +1,7 @@
-import img from "../Assets/project.jpg";
+import portfolioProject from "../Assets/portfolio-project.png";
+import degracomProject from "../Assets/degracom-project.png";
+import minigameProject from "../Assets/mini-games-project.png";
+import footballStatisticsProject from "../Assets/football-statistics-project.png";
 
 const portfolioHeader = {
   titleMain: "my",
@@ -10,62 +13,79 @@ const portfolioHeader = {
 const portfolioData = [
   {
     id: "A1",
-    title: "diploma thesis 1",
-    description: "My diploma thesis",
-    technologies: "html css javaScript",
-    duration: "9 months",
-    img: img,
-  },
-  {
-    id: "B2",
-    title: "diploma thesis 2",
-    description: "My diploma thesis",
-    technologies: "html css javaScript",
-    duration: "9 months",
-    img: img,
-  },
-  {
-    id: "C3",
-    title: "diploma thesis 3",
-    description: "My diploma thesis",
-    technologies: "html css javaScript",
-    duration: "9 months",
-    img: img,
-  },
-  {
-    id: "D4",
-    title: "diploma thesis 4",
-    description: "My diploma thesis",
-    technologies: "html css javaScript",
-    duration: "9 months",
-    img: img,
-  },
-  {
-    id: "E5",
-    title: "diploma thesis 5",
-    description: "My diploma thesis",
-    technologies: "html css javaScript",
-    duration: "9 months",
-    img: img,
-  },
-  {
-    id: "F6",
-    title: "diploma thesis 6",
-    img: img,
-    link: "https://github.com/evans-p/diploma-thesis",
+    title: "portfolio",
+    img: portfolioProject,
+    // link: "https://github.com/evans-p/diploma-thesis",
     info: [
       [<i className="bi bi-file-earmark-text"></i>, "project", "website"],
       [
-        <i className="bi bi-file-earmark-text"></i>,
+        <i className="bi bi-info-circle"></i>,
         "description",
-        "My diploma thesis",
+        "My personal portfolio website",
       ],
       [
-        <i className="bi bi-file-earmark-text"></i>,
+        <i className="bi bi-code-slash"></i>,
         "technologies",
-        "html css javaScript",
+        "html css javaScript react",
       ],
-      [<i className="bi bi-file-earmark-text"></i>, "duration", "9 months"],
+      [<i className="bi bi-hourglass"></i>, "duration", "1 month"],
+    ],
+  },
+  {
+    id: "B2",
+    title: "Diploma thesis",
+    img: degracomProject,
+    link: "https://github.com/evans-p?tab=repositories",
+    info: [
+      [<i className="bi bi-file-earmark-text"></i>, "project", "website"],
+      [
+        <i className="bi bi-info-circle"></i>,
+        "description",
+        "project for deploma thesis",
+      ],
+      [
+        <i className="bi bi-code-slash"></i>,
+        "technologies",
+        "react Java REST ACCeleo",
+      ],
+      [<i className="bi bi-hourglass"></i>, "duration", "9 months"],
+    ],
+  },
+  {
+    id: "C3",
+    title: "Minigames",
+    img: minigameProject,
+    link: "https://github.com/evans-p/mini-games",
+    info: [
+      [<i className="bi bi-file-earmark-text"></i>, "project", "website"],
+      [
+        <i className="bi bi-info-circle"></i>,
+        "description",
+        "A series of minigames",
+      ],
+      [
+        <i className="bi bi-code-slash"></i>,
+        "technologies",
+        "html css javaScript react",
+      ],
+      [<i className="bi bi-hourglass"></i>, "duration", "1 month"],
+    ],
+  },
+
+  {
+    id: "D4",
+    title: "FOOTBALL Statistics",
+    img: footballStatisticsProject,
+    link: "https://drive.google.com/file/d/1pU6wvfW9omWWf5OZh3_gWty9Wf_sER1T/view?usp=share_link",
+    info: [
+      [<i className="bi bi-file-earmark-text"></i>, "project", "database"],
+      [
+        <i className="bi bi-info-circle"></i>,
+        "description",
+        "A database to store football statistics",
+      ],
+      [<i className="bi bi-code-slash"></i>, "technologies", "sql"],
+      // [<i className="bi bi-hourglass"></i>, "duration", "1 month"],
     ],
   },
 ];

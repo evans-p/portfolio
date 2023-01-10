@@ -7,7 +7,6 @@ import MainButton from "../MainButton/MainButton";
 import SecondaryButton from "../SecondaryButton/SecondaryButton";
 
 import portrait from "../../Assets/img_portfolio.jpg";
-// import portrait from "./Assets/";
 
 class Heroe extends React.Component {
   render() {
@@ -36,10 +35,9 @@ class Heroe extends React.Component {
             </div>
 
             <p>
-              I'm a Freelance UI/UX Designer and Developer based in London,
-              England. I strives to build immersive and beautiful web
-              applications through carefully crafted code and user-centric
-              design.
+              I'm a software engineer based in Athens, Greece. Passionate about
+              building beautiful applications carefully trough crafted code and
+              user-centric design.
             </p>
             <div className="buttons">
               <Link to="/about">

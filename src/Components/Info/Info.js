@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import "./Info.css";
 
 import MainButton from "../MainButton/MainButton";
 
 import portrait from "../../Assets/img_portfolio.jpg";
-import CV from "../../Assets/CV_Poulakis_Evaggelos.pdf";
+// import CV from "../../Assets/CV_Poulakis_Evaggelos.pdf";
 import { infoDataLeft, infoDataRight } from "../../Data/aboutData";
 
 class Info extends React.Component {
@@ -100,13 +100,21 @@ class Info extends React.Component {
                     : "col d-flex justify-content-center align-items-center"
                 }
               >
-                <Link to={CV} download="CV_Poulakis_Evaggelos" target="_blank">
+                {/* <Link to={CV} download="CV_Poulakis_Evaggelos" target="_blank"> */}
+                <a
+                  href={
+                    "https://drive.google.com/file/d/1lJhMAZcRffbESd1ok2kuHSAstrLsiIRT/view?usp=share_link"
+                  }
+                  target="_blank"
+                  // style={{ marginBottom: "30px" }}
+                >
                   <MainButton
                     icon={<i className="bi bi-download"></i>}
                     text={"download my cv"}
                     // action={this.downloadPDF}
                   />
-                </Link>
+                </a>
+                {/* </Link> */}
               </div>
             </div>
           </div>

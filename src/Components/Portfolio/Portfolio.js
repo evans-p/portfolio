@@ -20,7 +20,7 @@ class Portfolio extends React.Component {
         <div className="row gx-4">
           <div className="col-12 col-md-6 col-lg-4">
             {portfolioData
-              .slice(0, Math.floor(portfolioData.length / 3))
+              .slice(0, Math.ceil(portfolioData.length / 3))
               .map((el, idx) => (
                 <PortfolioItem
                   key={el.id}
@@ -33,8 +33,8 @@ class Portfolio extends React.Component {
           <div className="col-12 col-md-6 col-lg-4">
             {portfolioData
               .slice(
-                Math.floor(portfolioData.length / 3),
-                Math.floor((2 * portfolioData.length) / 3)
+                Math.ceil(portfolioData.length / 3),
+                Math.ceil((2 * portfolioData.length) / 3)
               )
               .map((el, idx) => (
                 <PortfolioItem
@@ -47,7 +47,7 @@ class Portfolio extends React.Component {
           </div>
           <div className="col-12 col-md-6 col-lg-4">
             {portfolioData
-              .slice(Math.floor((2 * portfolioData.length) / 3))
+              .slice(Math.ceil((2 * portfolioData.length) / 3))
               .map((el, idx) => (
                 <PortfolioItem
                   key={el.id}
@@ -66,7 +66,7 @@ class Portfolio extends React.Component {
         <div className="row gx-4">
           <div className="col-12 col-md-6 col-lg-4">
             {portfolioData
-              .slice(0, Math.floor(portfolioData.length / 2))
+              .slice(0, Math.ceil(portfolioData.length / 2))
               .map((el, idx) => (
                 <PortfolioItem
                   key={el.id}
@@ -78,7 +78,7 @@ class Portfolio extends React.Component {
           </div>
           <div className="col-12 col-md-6 col-lg-4">
             {portfolioData
-              .slice(Math.floor(portfolioData.length / 2))
+              .slice(Math.ceil(portfolioData.length / 2))
               .map((el, idx) => (
                 <PortfolioItem
                   key={el.id}

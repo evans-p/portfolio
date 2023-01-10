@@ -12,7 +12,7 @@ class PortfolioModal extends React.Component {
         <div className="wrapper">
           <img src={this.props.img} alt={this.props.title} />
           <div className="row">
-            <div className="col d-flex flex-column align-items-start">
+            <div className="col-8 d-flex flex-column align-items-start">
               <h3>{this.props.title}</h3>
               <ul>
                 {this.props.info

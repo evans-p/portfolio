@@ -19,7 +19,8 @@
 .Heroe .col:last-child p {
   margin-top: 11px;
   margin-bottom: 23px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.1em;
   width: 95%;
   line-height: 32px;
+  /* font-family: "Open Sans"; */
 }

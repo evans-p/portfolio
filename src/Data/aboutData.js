@@ -12,7 +12,7 @@ const infoDataLeft = [
   ["Languages", "English French"],
 ];
 const infoDataRight = [
-  ["Experience", "None"],
+  ["Experience", "Student"],
   ["Address", "Athens Greece"],
   ["Phone", "+30 6978 418 570"],
   ["Email", "evanspoulaki@gmail.com"],
